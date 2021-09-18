@@ -69,8 +69,9 @@ int is_correct(char postfix[]){
 	int i=0;
 	int top=-1;
 	int count=0;
-   
+    int size=0;
 	for(i=0;postfix[i]!='\0';i++){
+		size++;
 		if(postfix[i]==' ')continue;
 		if(is_digit(postfix[i]))count++;
 		else{
@@ -81,7 +82,7 @@ int is_correct(char postfix[]){
 		else
 		return 0;
 	}
-	if(count==1)return 1;
+	if(count==1 && size>=3)return 1;
 	else
 	return 0;
 	
